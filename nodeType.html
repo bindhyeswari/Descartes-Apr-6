@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'interactive') {
+                var div = document.querySelector('div');
+                console.log(getChildElements(div));
+            }
+        });
+
+        function getChildElements(node) {
+            // get all the children
+            // filter out only the children which have a nodeType === 1
+            // USE ARRAY.PROTOTYPE methods only
+            // return the array
+
+            return Array.prototype.filter.call(node.childNodes, function (childNode) {
+                return childNode.nodeType === 1;
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <span>This is a span</span>
+    </div>
+</body>
+</html>
